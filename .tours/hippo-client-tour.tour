@@ -1,0 +1,67 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Hippo Client Tour",
+  "steps": [
+    {
+      "file": "Program.cs",
+      "description": "Every request we send to the game server needs to include a secret token that the server gave you when you first connected.  If you stop your program (for example, to make a change to your code) you have the ability to save that token so you can continue to play as that same user the next time you start up the program (e.g. you don't have to register again).",
+      "line": 14
+    },
+    {
+      "file": "Program.cs",
+      "description": "If you didn't re-use a prior token to resume a prior game, then create a new connection. ",
+      "line": 32
+    },
+    {
+      "file": "Program.cs",
+      "description": "Get the server address and player name either from command line arguments or by asking the user.\r\nExample syntax: \r\n```\r\ndotnet run http://localhost:5291 mario\r\n```",
+      "line": 36
+    },
+    {
+      "file": "Program.cs",
+      "description": "Once you are connected, the only thing to really do is just get input from the user, turn those into HTTP Requests to send to the server, and play the game. 🙂",
+      "line": 40
+    },
+    {
+      "file": "Program.cs",
+      "description": "Keeping a list of commonly used servers makes things more convenient for the user.",
+      "line": 62
+    },
+    {
+      "file": "Program.cs",
+      "description": "ReadKey() doesn't require the user to press enter like ReadLine() does.  This way the user can just press ➡➡➡➡➡ and move right five spaces, no \\[Enter\\] required.",
+      "line": 98
+    },
+    {
+      "file": "Program.cs",
+      "description": "Because sending HTTP requests can take some time, we use a C# language feature called *async/await*.  By prefixing the call to `gameClient.MoveRightAsync()` with `await` we tell the computer to pause execution of our program right here while it goes and does the network traffic in the background.  Once we've heard back from the server we come right back to this line and pick up where we left off.",
+      "line": 102
+    },
+    {
+      "file": "Program.cs",
+      "description": "You can only `await` inside of an async method, and in order for the computer to be able to keep track of where it's supposed to resume execution after waiting for the backrgound task, you need to change your method to return a `Task` (or `Task<T>`).\r\n\r\nFor example, if you used to have a method `public static int readInt(string prompt)` and you want to call an async method from inside of `readInt` you'd change the signature to be\r\n```\r\npublic static async Task<int> readIntAsync(string prompt)\r\n```\r\nNote 1) the async keyword, 2) the original return type wrapped in a `Task<T>` and 3) suffixing the method name with *Async*.",
+      "line": 94
+    },
+    {
+      "file": "Program.cs",
+      "description": "This is where we actually perform the network request to ask the server to move our player in any direction.",
+      "line": 134
+    },
+    {
+      "file": "Program.cs",
+      "description": "This is where we connect to the server and get our token when first joining the game.",
+      "line": 145
+    },
+    {
+      "file": "Program.cs",
+      "description": "Once connected, we can save the server's address and our secret token to a file on our computer, that way we can keep playing that same game if we need to restart our program (for example, if we want to make a change to our code during the game).",
+      "line": 183
+    },
+    {
+      "file": "Program.cs",
+      "description": "This is an example of how you can get values back out of a text file, earlier we *serialized* the values to text, here we are *deseralizing* them from text back into variables.  ",
+      "line": 173
+    }
+  ],
+  "ref": "63f47c1eb8a2daf310480fbccdda002a6cf02d4b"
+}
