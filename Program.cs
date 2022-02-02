@@ -56,8 +56,8 @@ namespace HippoClient
         private static string getServerAddress()
         {
             var defaultAddresses = new[]{
-                "https://hungry-hungry-hippos.herokuapp.com",
-                "http://144.17.s48.37",
+                "https://hungrygame.azurewebsites.net",
+                "http://144.17.48.37",
                 "http://localhost:5291"
             };
             var input = getString($"To which server would you like to connect?\n1) {defaultAddresses[0]}\n2) {defaultAddresses[1]} (GRSC 143 instructor PC)\n3) Other (you enter your own)", 1);
