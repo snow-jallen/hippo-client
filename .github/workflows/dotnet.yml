@@ -1,4 +1,4 @@
-name: .NET
+name: Publish New Release
 
 on:
   push:
