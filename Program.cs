@@ -20,10 +20,7 @@ class Program
             }
             else
             {
-                if (getBool("Do you want to delete that saved connection info?"))
-                {
-                    GameClient.DeletePreviousConnection();
-                }
+                GameClient.DeletePreviousConnection();
             }
         }
 
@@ -58,11 +55,16 @@ class Program
                 "http://144.17.48.37",
                 "http://localhost:5291"
             };
-        var input = getString($"To which server would you like to connect?\n1) {defaultAddresses[0]}\n2) {defaultAddresses[1]} (GRSC 143 instructor PC)\n3) Other (you enter your own)", 1);
+        var input = getString(@$"To which server would you like to connect?
+        1) {defaultAddresses[0]}
+        2) {defaultAddresses[1]} (GRSC 143 instructor PC)
+        3) {defaultAddresses[2]}
+        4) Other (you enter your own)", 1);
         switch (input)
         {
-            case "0":
             case "1":
+            case "2":
+            case "3":
                 var index = int.Parse(input) - 1;
                 return defaultAddresses[index];
             default:
@@ -109,6 +111,8 @@ class Program
                     await gameClient.MoveDownAsync();
                     break;
                 case ConsoleKey.Escape:
+                    //Console.WriteLine("....User pressed [Esc], ending program.\n\nThanks for playing!");
+                    Console.WriteLine("👍....\nThanks for playing!");
                     return;
             }
         }
