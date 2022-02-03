@@ -36,7 +36,7 @@ namespace HungryClient
                 gameClient = await GameClient.CreateClientAsync(serverAddress, playerName);
             }
 
-            Console.WriteLine("Congratulations, you are connected!\nNow use the arrow keys to eat all the things!");
+            Console.WriteLine("Congratulations, you are connected!\nNow use the arrow keys to eat all the things!\n(Press [Esc] to exit)");
             await makeMoves(gameClient);
         }
 
@@ -110,6 +110,8 @@ namespace HungryClient
                     case ConsoleKey.DownArrow:
                         await gameClient.MoveDownAsync();
                         break;
+                    case ConsoleKey.Escape:
+                        return;
                 }
             }
         }
