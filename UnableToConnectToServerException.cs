@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace HippoClient
+namespace HungryClient
 {
     [Serializable]
     internal class UnableToConnectToServerException : Exception

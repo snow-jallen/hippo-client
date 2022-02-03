@@ -9,8 +9,8 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/bin/Debug/net5.0/HippoClient.dll",
-            "args": ["https://hungry-hungry-hippos.herokuapp.com", "HippoClient-Debugger"],
+            "program": "${workspaceFolder}/bin/Debug/net5.0/HungryClient.dll",
+            "args": ["https://hungry-hungry-Hungrys.herokuapp.com", "HungryClient-Debugger"],
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal",
             "stopAtEntry": false
