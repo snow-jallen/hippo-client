@@ -22,9 +22,6 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
       
-  release:
-    runs-on: ubuntu-latest
-    steps:
     - name: Publish Windows
       run: dotnet publish -c Release --self-contained -r win-x64
       
