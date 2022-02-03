@@ -50,6 +50,7 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
         asset_path: ./bin/Release/net6.0/linux-x64/publish/HungryClient
         asset_name: linux/HungryClient
+        asset_content_type: application/octet-stream  
     - name: Upload Release Asset (osx)
       id: upload-release-asset-osx
       uses: actions/upload-release-asset@v1
@@ -59,6 +60,7 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
         asset_path: ./bin/Release/net6.0/osx-x64/publish/HungryClient
         asset_name: osx/HungryClient
+        asset_content_type: application/octet-stream 
     - name: Upload Release Asset (windows)
       id: upload-release-asset-win 
       uses: actions/upload-release-asset@v1
@@ -68,3 +70,4 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
         asset_path: ./bin/Release/net6.0/win-x64/publish/HungryClient
         asset_name: windows/HungryClient.exe
+        asset_content_type: application/octet-stream 
